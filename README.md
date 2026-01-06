@@ -6,6 +6,8 @@ L'objectif de de TP est de réaliser un mini jeu avec Unity (peu importe la vers
 2) Cette bille collecte des objets sur le terrain
 3) Lorsque cette bille a collecté tous les objets, la scène se termine avec un écran de fin
 
-![image](../ressources/final.gif)
+<p align="center">
+  <img width="50%" src="ressources/final.gif" />
+</p>
 
 Add Component > Physics > RigidBody
