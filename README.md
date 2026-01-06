@@ -41,4 +41,14 @@ L'objectif de de TP est de réaliser un mini jeu avec Unity (peu importe la vers
 8) Créer un vecteur qui contient les 3 valeurs de force pour la bille en x, y et z. Vous pouvez créer un attribut public force pour ajuster la force appliquée pour chaque direction.
 9) Utiliser la fonction [`AddForce()`](https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html) de `RigidBody` pour appliquer les forces sur la bille.
 
-## Etape 3 : Créer les objets à collecter
+## Etape 3 : Suivre la bille 
+
+1) Positionner la camera de tel sorte à ce qu'elle ait la bonne position au début du jeu.
+2) Créer un script qui permet à la caméra de suivre la bille. Pour cela, vous devrez mettre à jour sa position en fonction de la positon de la bille.
+
+> [!NOTE]
+> Pour récupérer un `GameObject`, il nous faudra une reference vers cet objet. Pour cela on peut déclarer un attribut `player` du type `GameObject` qui sera public. Cela nous permet de le lier à la bille directement dans l'`Inspector`.
+
+
+
+## Etape 4 : Créer les objets à collecter
