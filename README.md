@@ -49,6 +49,38 @@ L'objectif de de TP est de réaliser un mini jeu avec Unity (peu importe la vers
 > [!NOTE]
 > Pour récupérer un `GameObject`, il nous faudra une reference vers cet objet. Pour cela on peut déclarer un attribut `player` du type `GameObject` qui sera public. Cela nous permet de le lier à la bille directement dans l'`Inspector`.
 
+<p align="center">
+  <img width="50%" src="ressources/1.png" />
+</p>
 
+3) Récupérer dans un Vector3 la différence entre la position de la bille et de la camera en utilisant [`transform.position`](https://docs.unity3d.com/ScriptReference/Transform-position.html). Dans la méthode Update on pourra bouger la caméra de manière à toujours garder cette distance constante.
 
 ## Etape 4 : Créer les objets à collecter
+
+1) Créer un cube qui sera le modèle des objets à ramasser. On lui ajoutera un `Rigidbody`. Pour éviter qu'il ne tombe au sol, on enlevera la gravité et le définira comme Kinematic car on ne va pas le faire bouger grace à des forces. On le fera tourner sur lui même grâce à un script.
+
+> [!NOTE]
+> Pour que la collision de la bille avec le cube renvoie un evenement, on doit en définir un comme étant `Trigger` dans le composant `BoxCollider`.
+
+> [!NOTE]
+> En glissant-déposant l'objet dans l'interface Project, on peut créer un Préfab de notre objet, ce qui nous permettra ensuite d'avoir juste à changer le Préfab pour impacter tous les objets similaire présent sur la scène.
+
+2) Créez la scène avec 8 cubes à ramasser.
+
+3) En utilisant la méthode [`OnTriggerEnter(Collider other)`](https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html) dans le script associé aux cubes, gerer la collision entre la bille et les objets à ramasser. Il faudra faire en sorte que l'objet disparaisse et garder le compte des objets qui restent sur la scène.
+
+## Etape 5 : Interface
+
+1) Ajouter un Canvas dans la scène.
+2) Positionner un texte en bas à gauche de l'écran avec le nombre d'objets déjà ramassés (il faudra trouver un moyen d'obtenir cette information).
+3) Afficher un texte lorsque tous les objets sont ramassés.
+
+## Bonus : Améliorations libres
+
+Ajoutez des fonctionalités libres au jeu.
+
+Exemples :
+- Pouvoir faire sauter la bille (avec des cibles en hauteur)
+- Generation de terrain de jeu aléatoire
+- Ajout d'objets à ne surtout pas toucher
+- Pouvoir magique temporaire
