@@ -27,7 +27,7 @@ L'objectif de de TP est de réaliser un mini jeu avec Unity (peu importe la vers
 ## Etape 2 : Création de la bille (joueur)
 
 1) Créer la bille (sphère 3D) et la placer au centre du terrain.
-2) Ajouter un composant Rigidbody pour que celle-ci utilise le moteur physique. Nous pourrons ainsi lui appliquer des forces comme la gravité. Vous pouvez aller voir la [documentation](https://docs.unity3d.com/Manual/class-Rigidbody.html).
+2) Ajouter un composant [`Rigidbody`](https://docs.unity3d.com/Manual/class-Rigidbody.html) pour que celle-ci utilise le moteur physique. Nous pourrons ainsi lui appliquer des forces comme la gravité.
 3) Créer un nouveau dossier "Scripts" dans votre projet.
 4) A l'intérieur de ce dossier, ajouter un nouveau script de type "MonoBehaviour" nommé "DirectionalControls".
 5) Ajouter ce script comme nouveau composant de la bille et double-cliquer dessus dans la partie projet pour pouvoir le modifier.
@@ -38,12 +38,7 @@ L'objectif de de TP est de réaliser un mini jeu avec Unity (peu importe la vers
 > Vous pouvez savoir si l'utilisateur appuie sur une touche du clavier grâce à `Keyboard.current.<key>.isPressed`.
 > Vous pouvez aller voir la documentation de [Keyboard](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.13/api/UnityEngine.InputSystem.Keyboard.html?utm_source=chatgpt.com) et [KeyControl.IsPressed](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.13/api/UnityEngine.InputSystem.Keyboard.html?utm_source=chatgpt.com).
 
-Ensuite, on peut créer un Vector3 qui contient les mouvements Droite/Gauche (pour les x) et les mouvements Haut/Bas (pour les z). Ce vecteur représente le vecteur final des forces à appliquer sur la bille.
-
-Pour finir, on peut utiliser la fonction AddForce() de RigidBody pour appliquer les forces sur la bille. Doc.
-
-Si la vitesse de la bille est trop faible on pourra multiplier le vecteur de force par un paramètre float qui représentera la vitesse.
+8) Créer un vecteur qui contient les 3 valeurs de force pour la bille en x, y et z. Vous pouvez créer un attribut public force pour ajuster la force appliquée pour chaque direction.
+9) Utiliser la fonction [`AddForce()`](https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html) de `RigidBody` pour appliquer les forces sur la bille.
 
 ## Etape 3 : Créer les objets à collecter
-
-Add Component > Physics > RigidBody
